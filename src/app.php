@@ -25,15 +25,15 @@ $app['translator'] = $app->share($app->extend('translator',
                                               function($translator, $app){
     $translator->addLoader('yaml', new YamlFileTranslateLoader());
 
-    $translator->addResource('yaml', __DIR__.'/../conf/locales/en_default.yml', 'en');
-    $translator->addResource('yaml', __DIR__.'/../conf/locales/fr_default.yml', 'fr');
+    $translator->addResource('yaml', __DIR__.'/../config/locales/en_default.yml', 'en');
+    $translator->addResource('yaml', __DIR__.'/../config/locales/fr_default.yml', 'fr');
 
-    if (file_exists(__DIR__.'/../conf/locales/en.yml')) {
-        $translator->addResource('yaml', __DIR__.'/../conf/locales/en.yml', 'en');
+    if (file_exists(__DIR__.'/../config/locales/en.yml')) {
+        $translator->addResource('yaml', __DIR__.'/../config/locales/en.yml', 'en');
     }
 
-    if (file_exists(__DIR__.'/../conf/locales/fr.yml')) {
-        $translator->addResource('yaml', __DIR__.'/../conf/locales/fr.yml', 'fr');
+    if (file_exists(__DIR__.'/../config/locales/fr.yml')) {
+        $translator->addResource('yaml', __DIR__.'/../config/locales/fr.yml', 'fr');
     }
     
     return $translator ;
