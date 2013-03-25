@@ -22,7 +22,6 @@
     <!--[if lt IE 7]>
       <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
-
     <div id="toplinklist" class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -60,71 +59,7 @@
 
     <!--fluid-container-->
     <div id="body_container" class="container">
-
-      <div class="row">
-        <div class="span12">
-          <div class="well">
-            {% trans %}description{% endtrans %}
-          </div>
-        </div>
-      </div>
-
-      {% if error is defined and error|length > 0 %}
-      <div class="row">
-        <div class="span12">
-          <div class="alert alert-error">
-            <strong>Mince !</strong> {{ error }}
-          </div>
-        </div>
-      </div>
-      {% endif %}
-
-      <form method="post" class="form-horizontal" action="createPad">
-        <input type="hidden" name="lang" value="{{ lang }}" />
-        <div class="row">
-
-          <div class="span12">
-            <fieldset>
-              <legend>Options</legend>
-
-              <div class="control-group">
-                <label class="control-label"
-                       for="password">{% trans %}Mot de passe{% endtrans %}</label>
-                <div class="controls">
-                  <input type="text" class="input-medium"
-                  name="password" id="password"
-                  size="8" maxlength="8" title="{% trans %}ssi mot de passe{% endtrans %}"/>
-                  <span class="help-inline">
-                    <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
-                    <span class="label label-info">{% trans with {'%count%': '8'} %}max{% endtrans%}</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="control-group">
-                <label class="control-label"
-                       for="padsuffix">{% trans %}Suffixe{% endtrans %}</label>
-                <div class="controls">
-                  <input type="text" class="input-medium"
-                         name="padsuffix" id="padsuffix"
-                         maxlength="20" value="{% if padsuffix is defined
-                         and error %}{{ padsuffix }}{% endif %}"
-                         title="{% trans %}aide suffixe{% endtrans %}"/>
-                  <span class="help-inline">
-                    <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
-                    <span class="label label-info">{% trans with {'%count%': '20'} %}max{% endtrans%}</span>
-                  </span>
-                </div>
-              </div>
-
-              <div class="form-actions">
-                <button type="submit" value="Envoyer" class="btn
-                btn-danger" name="submit"><i class="icon-plus icon-white"></i> {% trans %}Créer un pad{% endtrans %}</button>
-              </div>
-            </fieldset>
-          </div>
-        </div>
-      </form>
+      {% block content %}{% endblock %}
     </div>
 
     <div class="container">

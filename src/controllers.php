@@ -1,35 +1,26 @@
 <?php
 
-$app = require __DIR__.'/bootstrap.php' ;
-
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-// Page 404
+// Error pages
 $app->error(function (\Exception $e, $code) use ($app) {
-    switch ($code) {
-        case 404:
-            $app['locale'] = "fr" ;
-            $message = $app['twig']->render('base.twig', array(
-                                                               'lang' => 'fr',
-                                                               'error' => '404 - The requested page could not be found.',
-                                                               ));
-            break;
-        default:
-          if ($app['debug']) {
-            return ;
-          }
-          $message = 'We are sorry, but something went terribly wrong.';
+    if ($app['debug']) {
+        return;
     }
 
-    return new Response($message, $code);
-    });
+    $app['locale'] = "fr" ;
+
+    $page = 404 == $code ? '404.html' : '500.html';
+
+    return new Response($app['twig']->render($page, array('code' => $code)), $code);
+});
 
 // /fr et /en
 $app->get('/{lang}',
           function ($lang, Silex\Application $app, Request $request) {
             $app['translator']->setLocale($lang) ;
-            return $app['twig']->render('base.twig',
+            return $app['twig']->render('index.html',
                                         array(
                                               'lang' => $lang,
                                               ));
@@ -56,7 +47,7 @@ $app->post('/createPad',
                return $app->redirect($app['etherpad.public_url']."/p/$padId") ;
 
              } catch (Exception $e) {
-               return $app['twig']->render('base.twig',
+               return $app['twig']->render('index.html',
                                            array(
                                                  'lang' => $lang,
                                                  'error' => $e->getMessage(),
