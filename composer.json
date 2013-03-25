@@ -1,4 +1,13 @@
 {
+    "name": "neurolit/etherpad-lite-frontend",
+    "description": "Frontend for creating new Etherpad Lite pads",
+    "keywords": ["frontend", "etherpad-lite"],
+    "authors": [
+        {
+            "name": "Florian D.",
+            "email": "neurolit@gmail.com"
+        }
+    ],
     "require": {
         "silex/silex": "1.0.*@dev",
         "kriswallsmith/buzz": "v0.8",
