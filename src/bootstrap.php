@@ -21,7 +21,7 @@ $app->register(new Inria\SEISM\Provider\EtherpadServiceProvider(), array(
 
 // use Twig
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path'       => __DIR__.'/views',
+    'twig.path'       => __DIR__.'/../templates',
 ));
 
 // Use TranslationService

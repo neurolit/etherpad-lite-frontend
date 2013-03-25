@@ -10,7 +10,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
     switch ($code) {
         case 404:
             $app['locale'] = "fr" ;
-            $message = $app['twig']->render('base.twig', array(
+            $message = $app['twig']->render('index.html', array(
                                                                'lang' => 'fr',
                                                                'error' => '404 - The requested page could not be found.',
                                                                ));
@@ -29,7 +29,7 @@ $app->error(function (\Exception $e, $code) use ($app) {
 $app->get('/{lang}',
           function ($lang, Silex\Application $app, Request $request) {
             $app['translator']->setLocale($lang) ;
-            return $app['twig']->render('base.twig',
+            return $app['twig']->render('index.html',
                                         array(
                                               'lang' => $lang,
                                               ));
@@ -56,7 +56,7 @@ $app->post('/createPad',
                return $app->redirect($app['etherpad.public_url']."/p/$padId") ;
 
              } catch (Exception $e) {
-               return $app['twig']->render('base.twig',
+               return $app['twig']->render('index.html',
                                            array(
                                                  'lang' => $lang,
                                                  'error' => $e->getMessage(),
