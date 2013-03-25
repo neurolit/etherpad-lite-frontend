@@ -1,5 +1,6 @@
 <?php
-var $config ;
+
+use Symfony\Component\Yaml\Yaml;
 
 if (file_exists(__DIR__."/../conf/app.yml")) {
     $config = Yaml::parse(__DIR__."/../conf/app.yml");
@@ -13,7 +14,7 @@ $app['etherpad.port']       = $config['etherpad']['port'];
 $app['etherpad.api_key']    = $config['etherpad']['api_key'];
 $app['etherpad.public_url'] = $config['etherpad']['public_url'];
 
-$app['db.options'] = [
+$app['db.options'] = array(
     'driver'    => 'pdo_mysql',
     'host'      => $config['mysql']['host'],
     'dbname'    => $config['mysql']['dbname'],
@@ -23,4 +24,4 @@ $app['db.options'] = [
     'driverOptions' => array(PDO::MYSQL_ATTR_INIT_COMMAND
                              =>
                              'SET NAMES utf8'),
-];
+);
