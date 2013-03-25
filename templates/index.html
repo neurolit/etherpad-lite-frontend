@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block content %}
+      <div class="row">
+        <div class="span12">
+          <div class="well">
+            {% trans %}description{% endtrans %}
+          </div>
+        </div>
+      </div>
+
+      {% if error is defined and error|length > 0 %}
+      <div class="row">
+        <div class="span12">
+          <div class="alert alert-error">
+            <strong>Mince !</strong> {{ error }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+
+      <form method="post" class="form-horizontal" action="createPad">
+        <input type="hidden" name="lang" value="{{ lang }}" />
+        <div class="row">
+
+          <div class="span12">
+            <fieldset>
+              <legend>Options</legend>
+
+              <div class="control-group">
+                <label class="control-label"
+                       for="password">{% trans %}Mot de passe{% endtrans %}</label>
+                <div class="controls">
+                  <input type="text" class="input-medium"
+                  name="password" id="password"
+                  size="8" maxlength="8" title="{% trans %}ssi mot de passe{% endtrans %}"/>
+                  <span class="help-inline">
+                    <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
+                    <span class="label label-info">{% trans with {'%count%': '8'} %}max{% endtrans%}</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="control-group">
+                <label class="control-label"
+                       for="padsuffix">{% trans %}Suffixe{% endtrans %}</label>
+                <div class="controls">
+                  <input type="text" class="input-medium"
+                         name="padsuffix" id="padsuffix"
+                         maxlength="20" value="{% if padsuffix is defined
+                         and error %}{{ padsuffix }}{% endif %}"
+                         title="{% trans %}aide suffixe{% endtrans %}"/>
+                  <span class="help-inline">
+                    <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
+                    <span class="label label-info">{% trans with {'%count%': '20'} %}max{% endtrans%}</span>
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" value="Envoyer" class="btn
+                btn-danger" name="submit"><i class="icon-plus icon-white"></i> {% trans %}Créer un pad{% endtrans %}</button>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+{% endblock %}

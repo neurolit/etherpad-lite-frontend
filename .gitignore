@@ -1,6 +1,6 @@
 /bin/composer.phar
 /vendor/
-/conf/app.yml
-/conf/locales/en.yml
-/conf/locales/fr.yml
+/config/app.yml
+/config/locales/en.yml
+/config/locales/fr.yml
 /public/css/custom.css
