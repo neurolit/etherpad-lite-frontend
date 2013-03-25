@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Neurolit -- Lead developer -- @Neurolit
+
+# TECHNOLOGY COLOPHON
+
+    Silex (Sensiolabs)
+    Bootstrap, jQuery, Modernizr, Holder.js

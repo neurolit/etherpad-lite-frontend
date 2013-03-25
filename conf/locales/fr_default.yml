@@ -1,0 +1,21 @@
+app_name: Etherpad-Lite
+top_links: |
+  <li><a href="http://etherpad.org/">Etherpad-Lite</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="en"><img alt="English version" src="img/picto_lang_en.png"/></a></li>
+pad_creation: Création de pad
+app_subtitle: Éditeur de texte collaboratif
+description: |
+  <p><strong>Etherpad-Lite</strong> est un service vous permettant d'écrire collaborativement du texte en temps réel.</p>
+  <p>Les contributions de chacun apparaissent immédiatement sur l'écran de tous les participants et sont signalées par des couleurs différentes.</p>
+  <p>Une fenêtre de messagerie instantanée est également disponible.</p>
+Mot de passe: Mot de passe
+ssi mot de passe: Seulement si vous souhaitez une protection par mot de passe
+Optionnel: Optionnel
+max: %count% caractères max
+Suffixe: Suffixe
+aide suffixe: Ajouté à l'adresse du Pad, pour le retrouver plus facilement dans l'historique de navigation
+Créer un pad: Créer un pad
+logo_uri: holder.js/222x95/text:Logo (222x95)
+bottom_links: |
+  <li><a href="http://etherpad.org/">Propulsé par Etherpad-Lite</a></li>

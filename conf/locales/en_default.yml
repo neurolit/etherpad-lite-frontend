@@ -1,0 +1,20 @@
+app_name: Etherpad-Lite
+top_links: |
+  <li><a href="http://etherpad.org/">Etherpad-Lite</a></li>
+  <li class="divider-vertical"></li>
+  <li><a href="fr"><img alt="Version française" src="img/picto_lang_fr.png"/></a></li>
+pad_creation: pad creation
+app_subtitle: Real-time document collaboration
+description: |
+  <p><strong>Etherpad-Lite</strong> is a hosted web service that allows really real-time document collaboration for groups of users.</p>
+  <p>Everybody will collaborate letter by letter, on screen, with color-coded edits.</p>
+Mot de passe: Password
+ssi mot de passe: Only if you want a password-protected Pad
+Optionnel: Optional
+max: max %count% characters
+Suffixe: Suffix
+aide suffixe: Added to your Pad URL, in order to retrieve it in your browser history
+Créer un pad: Create a pad
+logo_uri: holder.js/222x95/text:Logo (222x95)
+bottom_links: |
+  <li><a href="http://etherpad.org/">Powered by Etherpad-Lite</a></li>

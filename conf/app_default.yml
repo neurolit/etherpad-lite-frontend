@@ -1,0 +1,12 @@
+# this file should be renamed into app.yml
+etherpad:
+  protocol: http
+  server: localhost
+  port: 9001
+  api_key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  public_url: https://myetherpadurl.me.org
+mysql:
+  host: localhost
+  dbname: log_db
+  user: log_db_user
+  password: 'MYPASSWORD'
