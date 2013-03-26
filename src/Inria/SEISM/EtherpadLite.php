@@ -59,7 +59,7 @@ class EtherpadLite
   public function listAllPads()
   {
     $jsonResponse = $this->execAction('listAllPads');
-    return $jsonResponse->{'data'};
+    return $jsonResponse->{'data'}->{'padIDs'};
   }
 
   private function createProtectedPad($password, $suffix, $text="")
