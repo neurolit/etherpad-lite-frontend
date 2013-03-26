@@ -15,7 +15,7 @@ $console
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
        $pads = $app['etherpad']->listAllPads();
        foreach($pads as $pad) {
-          print "$pad\n";
+          $output->writeln($pad);
        }
     })
 ;
