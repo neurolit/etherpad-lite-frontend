@@ -42,9 +42,7 @@ $app['translator'] = $app->share($app->extend('translator',
     return $translator ;
 }));
 
-// etherpad_log MySQL
-// CREATE DATABASE etherpad_log DEFAULT CHARACTER SET 'utf8' DEFAULT COLLATE 'utf8_bin' ;
-// CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15)) ;
+// database
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 
 return $app ;
