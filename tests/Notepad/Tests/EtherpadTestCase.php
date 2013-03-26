@@ -168,7 +168,7 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
    */
   public function testListAllPads($protocol,$server,$port,$apiKey,$suffixe,$texte)
   {
-    $responseStub = $this->_createResponseStub("0","ok", '["firstPad", "secondPad"]');
+    $responseStub = $this->_createResponseStub("0","ok", '{"padIDs": ["firstPad", "secondPad"]}');
     $browserMock = $this->_createBrowserMock(array(
                                                    array(
                                                          $this->once(),
