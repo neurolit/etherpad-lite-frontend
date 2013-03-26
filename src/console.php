@@ -20,4 +20,16 @@ $console
     })
 ;
 
+$console
+    ->register('getText')
+    ->setDefinition(array(
+        new InputArgument('padID', InputArgument::REQUIRED, 'Pad ID')
+    ))
+    ->setDescription('Return text of a pad from etherpad-lite')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+       $padID = $input->getArgument('padID');
+       $output->writeln($app['etherpad']->getText($padID));
+    })
+;
+
 return $console;
