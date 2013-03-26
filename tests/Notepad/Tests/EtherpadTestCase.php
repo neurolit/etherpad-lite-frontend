@@ -163,6 +163,34 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
 
   }
 
+  /**
+   * @dataProvider etherpadConfs
+   */
+  public function testListAllPads($protocol,$server,$port,$apiKey,$suffixe,$texte)
+  {
+    $responseStub = $this->_createResponseStub("0","ok", '["firstPad", "secondPad"]');
+    $browserMock = $this->_createBrowserMock(array(
+                                                   array(
+                                                         $this->once(),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/listAllPads?apikey='.$apiKey),
+                                                         $this->returnValue($responseStub)
+                                                         )
+                                                   )
+                                             );
+
+    $etherpad = new EtherpadLite($protocol,
+                                 $server,
+                                 $port,
+                                 $apiKey);
+    $etherpad->setBrowser($browserMock);
+
+    $pads = $etherpad->listAllPads();
+
+    $this->assertEquals(2, sizeOf($pads));
+    $this->assertEquals("firstPad",$pads[0]);
+    $this->assertEquals($pads, array("firstPad","secondPad"));
+  }
+
   public function etherpadConfs()
   {
     return array(
@@ -172,7 +200,6 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
                  array('https','www.inria.fr','443','apiKey4','suffixe',''),
                  );
   }
-
 
 }
 

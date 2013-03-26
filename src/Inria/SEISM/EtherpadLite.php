@@ -56,6 +56,12 @@ class EtherpadLite
     }
   }
 
+  public function listAllPads()
+  {
+    $jsonResponse = $this->execAction('listAllPads');
+    return $jsonResponse->{'data'};
+  }
+
   private function createProtectedPad($password, $suffix, $text="")
   {
     $padId = $this->generatePadId($suffix) ;
