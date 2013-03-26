@@ -4,10 +4,13 @@ use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\Translation\Loader\YamlFileLoader as YamlFileTranslateLoader;
+use Silex\Provider\ServiceControllerServiceProvider;
 
 $app = new Application();
 
 $app->register(new Inria\SEISM\Provider\EtherpadServiceProvider());
+
+$app->register(new ServiceControllerServiceProvider());
 
 // use Twig
 $app->register(new TwigServiceProvider(), array(

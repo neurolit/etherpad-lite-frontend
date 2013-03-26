@@ -6,16 +6,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 
-$console = new Application('My Silex Application', 'n/a');
+$console = new Application('Etherpad-Lite Frontend', 'n/a');
 $console->getDefinition()->addOption(new InputOption('--env', '-e', InputOption::VALUE_REQUIRED, 'The Environment name.', 'dev'));
 $console
-    ->register('my-command')
-    ->setDefinition(array(
-        // new InputOption('some-option', null, InputOption::VALUE_NONE, 'Some help'),
-    ))
-    ->setDescription('My command description')
+    ->register('listAllPads')
+    ->setDefinition(array())
+    ->setDescription('List all pads from etherpad-lite')
     ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
-        // do something
+       $pads = $app['etherpad']->listAllPads();
+       foreach($pads as $pad) {
+          print "$pad\n";
+       }
     })
 ;
 
