@@ -58,7 +58,8 @@ class EtherpadLite
 
   public function getText($padID)
   {
-    return ;
+    $jsonResponse = $this->execAction('getText',array("padID" => $padID)) ;
+    return $jsonResponse->{'data'}->{'text'};
   }
 
   public function listAllPads()

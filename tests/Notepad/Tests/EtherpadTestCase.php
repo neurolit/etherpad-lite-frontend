@@ -168,10 +168,6 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
    */
   public function testGetText($protocol,$server,$port,$apiKey,$suffixe,$texte)
   {
-    $this->markTestIncomplete(
-      'This test has not been implemented yet.'
-    );
-
     $padID = "Brutus";
     $responseStub = $this->_createResponseStub("0","ok", '{"text": "tu quoque mi fili"}');
     $browserMock = $this->_createBrowserMock(array(
