@@ -36,6 +36,19 @@ Here are the statements for creating the MySQL database:
 
 You can modify the text of the webpages by creating `config/locales/en.yml` and `config/locales/fr.yml`. Feel free to use `config/locales/en_default.yml` and `config/locales/fr_default.yml` as start points.
 
+### Configuring Apache
+
+Here is a sample for Apache:
+
+	DocumentRoot /APP_DIRECTORY/web
+	<Directory "/APP_DIRECTORY/web">
+        Options -MultiViews
+
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [L]
+    </Directory>
+
 ## Maintenance
 
 Each time you modify composer.json, or each time you want to update
