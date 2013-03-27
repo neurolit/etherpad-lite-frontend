@@ -4,10 +4,15 @@ use Silex\Application;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\TranslationServiceProvider;
 use Symfony\Component\Translation\Loader\YamlFileLoader as YamlFileTranslateLoader;
+use Silex\Provider\ServiceControllerServiceProvider;
+use Silex\Provider\UrlGeneratorServiceProvider;
 
 $app = new Application();
 
 $app->register(new Inria\SEISM\Provider\EtherpadServiceProvider());
+
+$app->register(new ServiceControllerServiceProvider());
+$app->register(new UrlGeneratorServiceProvider());
 
 // use Twig
 $app->register(new TwigServiceProvider(), array(
@@ -39,9 +44,7 @@ $app['translator'] = $app->share($app->extend('translator',
     return $translator ;
 }));
 
-// etherpad_log MySQL
-// CREATE DATABASE etherpad_log DEFAULT CHARACTER SET 'utf8' DEFAULT COLLATE 'utf8_bin' ;
-// CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15)) ;
+// database
 $app->register(new Silex\Provider\DoctrineServiceProvider());
 
 return $app ;

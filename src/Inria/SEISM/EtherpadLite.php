@@ -18,7 +18,7 @@ class EtherpadLite
     $this->port = $port ;
     $this->apiKey = $apiKey ;
     $this->protocol = $protocol ;
-    $this->apiUrl = $protocol."://".$server.":".$port."/api/1/" ;
+    $this->apiUrl = $protocol."://".$server.":".$port."/api/1.2.1/" ;
     $this->browser = new Browser() ;
   }
 
@@ -54,6 +54,18 @@ class EtherpadLite
     } else {
       return $this->createProtectedPad($password,$suffix,$text) ;
     }
+  }
+
+  public function getText($padID)
+  {
+    $jsonResponse = $this->execAction('getText',array("padID" => $padID)) ;
+    return $jsonResponse->{'data'}->{'text'};
+  }
+
+  public function listAllPads()
+  {
+    $jsonResponse = $this->execAction('listAllPads');
+    return $jsonResponse->{'data'}->{'padIDs'};
   }
 
   private function createProtectedPad($password, $suffix, $text="")

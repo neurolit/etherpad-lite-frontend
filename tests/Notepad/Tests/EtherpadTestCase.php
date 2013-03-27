@@ -45,7 +45,7 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
                                                    array(
                                                          $this->once(),
                                                          $this->logicalAnd(
-                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/createPad?apikey='.$apiKey.'&padID='),
+                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/createPad?apikey='.$apiKey.'&padID='),
                                                                            $this->stringEndsWith($suffixe.'&text='.$texte)),
                                                          $this->returnValue($responseStub)
                                                          )
@@ -128,25 +128,25 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
     $browserMock = $this->_createBrowserMock(array(
                                                    array(
                                                          $this->at(0),
-                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/createGroup?apikey='.$apiKey),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/createGroup?apikey='.$apiKey),
                                                          $this->returnValue($responseStub)),
                                                    array(
                                                          $this->at(1),
                                                          $this->logicalAnd(
-                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/createGroupPad?apikey='.$apiKey.'&groupID=g.9cPrs0P4ou9lKjad&padName='),
+                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/createGroupPad?apikey='.$apiKey.'&groupID=g.9cPrs0P4ou9lKjad&padName='),
                                                                            $this->stringEndsWith($suffixe.'&text='.$texte)),
                                                          $this->returnValue($responseStub)),
                                                    array(
                                                          $this->at(2),
                                                          $this->logicalAnd(
-                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/setPublicStatus?apikey='.$apiKey.'&padID=g.9cPrs0P4ou9lKjad%24'),
+                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/setPublicStatus?apikey='.$apiKey.'&padID=g.9cPrs0P4ou9lKjad%24'),
                                                                            $this->stringEndsWith('&publicStatus=true')
                                                                            ),
                                                          $this->returnValue($responseStub)),
                                                    array(
                                                          $this->at(3),
                                                          $this->logicalAnd(
-                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1/setPassword?apikey='.$apiKey.'&padID=g.9cPrs0P4ou9lKjad%24'),
+                                                                           $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/setPassword?apikey='.$apiKey.'&padID=g.9cPrs0P4ou9lKjad%24'),
                                                                            $this->stringEndsWith('&password='."SuperPassword")
                                                                            ),
                                                          $this->returnValue($responseStub))
@@ -163,6 +163,59 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
 
   }
 
+  /**
+   * @dataProvider etherpadConfs
+   */
+  public function testGetText($protocol,$server,$port,$apiKey,$suffixe,$texte)
+  {
+    $padID = "Brutus";
+    $responseStub = $this->_createResponseStub("0","ok", '{"text": "tu quoque mi fili"}');
+    $browserMock = $this->_createBrowserMock(array(
+                                                   array(
+                                                         $this->once(),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/getText?apikey='.$apiKey.'&padID='.$padID),
+                                                         $this->returnValue($responseStub)
+                                                         )
+                                                   )
+                                             ) ;
+
+    $etherpad = new EtherpadLite($protocol,
+                                 $server,
+                                 $port,
+                                 $apiKey) ;
+    $etherpad->setBrowser($browserMock) ;
+
+    return $etherpad->getText($padID) ;
+  }
+
+  /**
+   * @dataProvider etherpadConfs
+   */
+  public function testListAllPads($protocol,$server,$port,$apiKey,$suffixe,$texte)
+  {
+    $responseStub = $this->_createResponseStub("0","ok", '{"padIDs": ["firstPad", "secondPad"]}');
+    $browserMock = $this->_createBrowserMock(array(
+                                                   array(
+                                                         $this->once(),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/listAllPads?apikey='.$apiKey),
+                                                         $this->returnValue($responseStub)
+                                                         )
+                                                   )
+                                             );
+
+    $etherpad = new EtherpadLite($protocol,
+                                 $server,
+                                 $port,
+                                 $apiKey);
+    $etherpad->setBrowser($browserMock);
+
+    $pads = $etherpad->listAllPads();
+
+    $this->assertEquals(2, sizeOf($pads));
+    $this->assertEquals("firstPad",$pads[0]);
+    $this->assertEquals($pads, array("firstPad","secondPad"));
+  }
+
   public function etherpadConfs()
   {
     return array(
@@ -172,7 +225,6 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
                  array('https','www.inria.fr','443','apiKey4','suffixe',''),
                  );
   }
-
 
 }
 
