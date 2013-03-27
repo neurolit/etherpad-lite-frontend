@@ -76,3 +76,4 @@ Some simple EPL actions can be performed via the console:
 
 	$ ./console listAllPads
 	$ ./console getText padID
+	$ ./console deletePad padID
