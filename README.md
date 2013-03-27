@@ -69,3 +69,10 @@ In order to run the test suite, you need to install phpunit:
 Afterwards you can run the test suite:
 
 	$ php vendor/phpunit/phpunit/phpunit.php
+
+## Using the console
+
+Some simple EPL actions can be performed via the console:
+
+	$ ./console listAllPads
+	$ ./console getText padID
