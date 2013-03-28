@@ -35,7 +35,6 @@ $app->post('/createPad',
              $suffix = $request->get('padsuffix') ;
              $password = $request->get('password') ;
 
-             $text = $password ? "Password : $password\n" : "" ;
              $text .= "Bienvenue sur Notepad.\n".
                "Lien vers l'aide : https://wiki.inria.fr/support/FAQNotepad" ;
 
