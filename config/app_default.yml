@@ -11,4 +11,4 @@ mysql:
   user: log_db_user
   password: 'MYPASSWORD'
 frontend:
-  pad_initial_text: 'Bienvenue sur Etherpad-Lite !\nWelcome to Etherpad-Lite!\n'
+  pad_initial_text: "Bienvenue sur Etherpad-Lite !\nWelcome to Etherpad-Lite!\n"
