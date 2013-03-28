@@ -2,10 +2,10 @@
 
 use Symfony\Component\Yaml\Yaml;
 
-if (file_exists(__DIR__."/../config/app.yml")) {
-    $config = Yaml::parse(__DIR__."/../config/app.yml");
+if (file_exists(__DIR__."/app.yml")) {
+    $config = Yaml::parse(__DIR__."/app.yml");
 } else {
-    $config = Yaml::parse(__DIR__."/../config/app_default.yml");
+    $config = Yaml::parse(__DIR__."/app_default.yml");
 }
 
 $app['etherpad.protocol']   = $config['etherpad']['protocol'];
