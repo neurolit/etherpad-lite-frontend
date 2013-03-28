@@ -216,6 +216,31 @@ class EtherpadTestCase extends \PHPUnit_Framework_TestCase
   /**
    * @dataProvider etherpadConfs
    */
+  public function testGetLastEdited($protocol,$server,$port,$apiKey,$suffixe,$texte)
+  {
+    $padID = "Brutus";
+    $responseStub = $this->_createResponseStub("0","ok", '{"lastEdited": "1340815946602"}');
+    $browserMock = $this->_createBrowserMock(array(
+                                                   array(
+                                                         $this->once(),
+                                                         $this->stringStartsWith($protocol.'://'.$server.':'.$port.'/api/1.2.1/getLastEdited?apikey='.$apiKey.'&padID='.$padID),
+                                                         $this->returnValue($responseStub)
+                                                         )
+                                                   )
+                                             ) ;
+
+    $etherpad = new EtherpadLite($protocol,
+                                 $server,
+                                 $port,
+                                 $apiKey) ;
+    $etherpad->setBrowser($browserMock) ;
+
+    return $etherpad->getLastEdited($padID) ;
+  }
+
+  /**
+   * @dataProvider etherpadConfs
+   */
   public function testListAllPads($protocol,$server,$port,$apiKey,$suffixe,$texte)
   {
     $responseStub = $this->_createResponseStub("0","ok", '{"padIDs": ["firstPad", "secondPad"]}');

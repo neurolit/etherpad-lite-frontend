@@ -62,6 +62,12 @@ class EtherpadLite
     return $jsonResponse->{'data'}->{'text'};
   }
 
+  public function getLastEdited($padID)
+  {
+    $jsonResponse = $this->execAction('getLastEdited', array("padID" => $padID)) ;
+    return $jsonResponse->{'data'}->{'lastEdited'};
+  }
+
   public function listAllPads()
   {
     $jsonResponse = $this->execAction('listAllPads');
