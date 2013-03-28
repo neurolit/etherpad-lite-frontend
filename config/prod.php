@@ -25,3 +25,5 @@ $app['db.options'] = array(
                              =>
                              'SET NAMES utf8'),
 );
+
+$app['frontend.pad_initial_text'] = $config['frontend']['pad_initial_text'];
