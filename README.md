@@ -3,7 +3,18 @@ Etherpad-Lite frontend
 
 [![Build Status](https://travis-ci.org/neurolit/etherpad-lite-frontend.png?branch=master)](https://travis-ci.org/neurolit/etherpad-lite-frontend)
 
+## What is it?
+
+This application, based on [Silex framework](http://silex.sensiolabs.org/), is a web and console frontend to [Etherpad-Lite](http://etherpad.org/).
+
+* Web users can create **public or password protected** pads. They can choose a suffix to the pad name, its first part being generated.
+* Console admins can list all pads, delete some of them, getting content, etc.
+
 ## First install
+
+### Prerequisites
+
+You MUST use Etherpad-Lite >= 1.2.1.
 
 ### Install Composer
 
@@ -76,3 +87,5 @@ Some simple EPL actions can be performed via the console:
 
 	$ ./console listAllPads
 	$ ./console getText padID
+	$ ./console deletePad padID
+	$ ./console getLastEdited padID

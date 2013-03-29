@@ -2,11 +2,14 @@
 
 use Symfony\Component\Yaml\Yaml;
 
-if (file_exists(__DIR__."/../config/app.yml")) {
-    $config = Yaml::parse(__DIR__."/../config/app.yml");
-} else {
-    $config = Yaml::parse(__DIR__."/../config/app_default.yml");
+$default_config = Yaml::parse(__DIR__."/app_default.yml");
+$custom_config = array();
+
+if (file_exists(__DIR__."/app.yml")) {
+    $custom_config = Yaml::parse(__DIR__."/app.yml");
 }
+
+$config=array_merge($default_config,$custom_config);
 
 $app['etherpad.protocol']   = $config['etherpad']['protocol'];
 $app['etherpad.server']     = $config['etherpad']['server'];
@@ -25,3 +28,5 @@ $app['db.options'] = array(
                              =>
                              'SET NAMES utf8'),
 );
+
+$app['frontend.pad_initial_text'] = $config['frontend']['pad_initial_text'];

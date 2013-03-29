@@ -58,8 +58,14 @@ class EtherpadLite
 
   public function getText($padID)
   {
-    $jsonResponse = $this->execAction('getText',array("padID" => $padID)) ;
+    $jsonResponse = $this->execAction('getText', array("padID" => $padID)) ;
     return $jsonResponse->{'data'}->{'text'};
+  }
+
+  public function getLastEdited($padID)
+  {
+    $jsonResponse = $this->execAction('getLastEdited', array("padID" => $padID)) ;
+    return $jsonResponse->{'data'}->{'lastEdited'};
   }
 
   public function listAllPads()
@@ -67,6 +73,10 @@ class EtherpadLite
     $jsonResponse = $this->execAction('listAllPads');
     return $jsonResponse->{'data'}->{'padIDs'};
   }
+
+  public function deletePad($padID) {
+    $this->execAction('deletePad', array("padID" => $padID)) ;
+  } 
 
   private function createProtectedPad($password, $suffix, $text="")
   {
