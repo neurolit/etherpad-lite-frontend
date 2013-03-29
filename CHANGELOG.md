@@ -3,9 +3,9 @@ Changes
 
 ## 1.3.0
 
-* new function: deletePad(padID)
-* new function: getLastEdited(padID)
-* initial text of a pad can be set in app.yml configuration file
+* new function: `deletePad(padID)`
+* new function: `getLastEdited(padID)`
+* initial text of a pad can be set in `app.yml` configuration file
 
 ## 1.2.2
 
@@ -19,14 +19,14 @@ Changes
 
 * Etherpad-Lite API version MUST be >= 1.2.1
 * the console interacts with Etherpad-Lite
-* new function: listAllPads()
-* new function: getText(padID)
+* new function: `listAllPads()`
+* new function: `getText(padID)`
 * web profiler added to dev
 
 ## 1.1.0
 
 * layout changes
-* public/ directory renamed into web/
+* `public/` directory renamed into `web/`
 * files and directories respect [Silex-Skeleton](https://github.com/fabpot/Silex-Skeleton)
 
 ## 1.0.0
