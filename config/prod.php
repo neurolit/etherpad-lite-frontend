@@ -2,11 +2,12 @@
 
 use Symfony\Component\Yaml\Yaml;
 
+$default_config = Yaml::parse(__DIR__."/app_default.yml");
+$custom_config = array();
+
 if (file_exists(__DIR__."/app.yml")) {
     $custom_config = Yaml::parse(__DIR__."/app.yml");
-} 
-
-$default_config = Yaml::parse(__DIR__."/app_default.yml");
+}
 
 $config=array_merge($default_config,$custom_config);
 
