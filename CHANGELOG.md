@@ -1,6 +1,11 @@
 Changes
 =======
 
+## 1.4.0
+
+* renamed class names
+* Etherpad PHP API: local code replaced by neurolit/etherpad-lite-php-client v0.1.0 from Composer
+
 ## 1.3.0
 
 * new function: `deletePad(padID)`
