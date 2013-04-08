@@ -70,7 +70,7 @@ class AppTestCase extends \Silex\WebTestCase
     $port = '4567' ;
     $apiKey = 'aAzertyuioP' ;
 
-    $this->app->register(new \Inria\SEISM\Provider\EtherpadServiceProvider(), array(
+    $this->app->register(new \Neurolit\Silex\Provider\EtherpadServiceProvider(), array(
                                                                                    'etherpad.protocol'     => $protocol,
                                                                                    'etherpad.server'       => $server,
                                                                                    'etherpad.port'         => $port,
@@ -79,7 +79,7 @@ class AppTestCase extends \Silex\WebTestCase
 
     $etherpadLite = $this->app['etherpad'] ;
 
-    $this->assertInstanceOf('Inria\SEISM\EtherpadLite',$etherpadLite) ;
+    $this->assertInstanceOf('Neurolit\EtherpadLite\Client',$etherpadLite) ;
 
     $this->assertEquals($etherpadLite->getProtocol(),$protocol) ;
     $this->assertEquals($etherpadLite->getServer(),$server) ;
@@ -103,7 +103,7 @@ class AppTestCase extends \Silex\WebTestCase
     $suffix = "SUFFIXE";
     $password = "PASSWORD";
 
-    $etherpadLiteMock = $this->getMock('Inria\SEISM\EtherpadLite', array('createPad'), array(), 'EtherpadLite', false) ;
+    $etherpadLiteMock = $this->getMock('Neurolit\EtherpadLite\Client', array('createPad'), array(), 'EtherpadLite', false) ;
 
     // 1. EtherpadLite::createPad ne doit être appelé qu'une fois, avec les bonnes valeurs en paramètres.
     // 2. EtherpadLite::createPad retournera AZERTY comme padId.

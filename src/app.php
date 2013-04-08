@@ -9,7 +9,7 @@ use Silex\Provider\UrlGeneratorServiceProvider;
 
 $app = new Application();
 
-$app->register(new Inria\SEISM\Provider\EtherpadServiceProvider());
+$app->register(new Neurolit\Silex\Provider\EtherpadServiceProvider());
 
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
