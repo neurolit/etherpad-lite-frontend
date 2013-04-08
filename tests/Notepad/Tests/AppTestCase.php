@@ -79,7 +79,7 @@ class AppTestCase extends \Silex\WebTestCase
 
     $etherpadLite = $this->app['etherpad'] ;
 
-    $this->assertInstanceOf('Inria\SEISM\EtherpadLite',$etherpadLite) ;
+    $this->assertInstanceOf('Neurolit\EtherpadLite\Client',$etherpadLite) ;
 
     $this->assertEquals($etherpadLite->getProtocol(),$protocol) ;
     $this->assertEquals($etherpadLite->getServer(),$server) ;

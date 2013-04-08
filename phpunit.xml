@@ -12,7 +12,6 @@
          >
     <testsuites>
         <testsuite name="Notepad Test Suite">
-            <file>./tests/Notepad/Tests/EtherpadTestCase.php</file>
             <file>./tests/Notepad/Tests/AppTestCase.php</file>
         </testsuite>
     </testsuites>
