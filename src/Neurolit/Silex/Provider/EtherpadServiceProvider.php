@@ -1,5 +1,5 @@
 <?php
-namespace Inria\SEISM\Provider ;
+namespace Neurolit\Silex\Provider ;
 
 use Silex\Application ;
 use Silex\ServiceProviderInterface ;

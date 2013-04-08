@@ -35,7 +35,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Inria": "src/"
+            "Neurolit\\Silex\\Provider": "src/"
         }
     }
 }
