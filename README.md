@@ -28,7 +28,7 @@ You MUST use Etherpad-Lite >= 1.2.1.
 
 ### Set permissions
 
-`cache/` and `logs/` directories should be writable by *Apache* (replace `www-data` by *Apache* `uid` process:
+`cache/` and `logs/` directories should be writable by *Apache* (replace `www-data` by *Apache* process `uid`:
 
 	$ chown www-data:www-data cache/ logs/
 
