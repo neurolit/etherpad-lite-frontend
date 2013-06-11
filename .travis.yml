@@ -1,6 +1,16 @@
+---
 language: php
 php:
-  - 5.4
-  - 5.3
+- 5.4
+- 5.3
 before_script:
-  - composer install
+- composer install
+- mkdir -p ~/.composer
+- echo "{ 'config': { 'github-oauth': { 'github.com': '$GITHUB_API_TOKEN' } } }" > ~/.composer/config.json
+env:
+  global:
+    secure: ! 'I8y4jlwt+ddtNWnhJpkNbGWWkfF4s5p/DB8c4tKtVE2YRHMs8u/L1hUmNhtQ
+
+      VdZRQ/hYOPP5wFwqWhKg9xZaX8RTRYOg0hv9hrhTl3dNFK4X6HdE9QEGLsnX
+
+      ynISZSrFQUK3b46EGSSAulZyPKGqp4bhBkyME8ew2+FSuedqkKU='

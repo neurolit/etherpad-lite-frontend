@@ -1,6 +1,10 @@
 Changes
 =======
 
+## dev
+
+* Travis: using Github API token for Composer downloads
+
 ## 1.4.0
 
 * renamed class names
