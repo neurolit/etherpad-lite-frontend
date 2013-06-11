@@ -3,9 +3,9 @@ php:
 - 5.4
 - 5.3
 before_script:
-- composer install
 - "mkdir -p ~/.composer"
 - "echo \"{ 'config': { 'github-oauth': { 'github.com': '$GITHUB_API_TOKEN' } } }\" > ~/.composer/config.json"
+- composer install
 env:
   global:
     secure: ! 'I8y4jlwt+ddtNWnhJpkNbGWWkfF4s5p/DB8c4tKtVE2YRHMs8u/L1hUmNhtQ
