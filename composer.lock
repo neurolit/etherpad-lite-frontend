@@ -458,12 +458,12 @@
             "target-dir": "Silex/Provider",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensiolabs/Silex-WebProfiler.git",
+                "url": "https://github.com/silexphp/Silex-WebProfiler.git",
                 "reference": "v1.0.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/Silex-WebProfiler/zipball/v1.0.0",
+                "url": "https://api.github.com/repos/silexphp/Silex-WebProfiler/zipball/v1.0.0",
                 "reference": "v1.0.0",
                 "shasum": ""
             },
