@@ -1,9 +1,11 @@
 Changes
 =======
 
-## dev
+## 1.4.1 
 
 * Travis: using Github API token for Composer downloads
+  (corrects Travis threads)
+* Composer: setting Symfony dependancies to 2.2.* instead of 2.*
 
 ## 1.4.0
 
