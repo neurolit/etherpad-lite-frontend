@@ -1,7 +1,7 @@
 Changes
 =======
 
-## dev
+## 1.4.2 
 
 * new console command: setPassword (depends on neurolit/etherpad-lite-php-client v0.2.0)
 * new version of neurolit/etherpad-lite-php-client: 0.2.0
