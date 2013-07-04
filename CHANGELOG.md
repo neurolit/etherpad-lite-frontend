@@ -1,6 +1,11 @@
 Changes
 =======
 
+## dev
+
+* new console command: setPassword (depends on neurolit/etherpad-lite-php-client v0.2.0)
+* new version of neurolit/etherpad-lite-php-client: 0.2.0
+
 ## 1.4.1 
 
 * Travis: using Github API token for Composer downloads

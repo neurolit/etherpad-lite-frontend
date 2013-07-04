@@ -72,4 +72,17 @@ $console
     })
 ;
 
+$console
+    ->register('setPassword')
+    ->setDefinition(array(
+        new InputArgument('padID', InputArgument::REQUIRED, 'Pad ID'),
+        new InputArgument('newPassword', InputArgument::REQUIRED, 'Pad new password')
+    ))
+    ->setDescription('Sets a new password for an already-protected pad')
+    ->setCode(function (InputInterface $input, OutputInterface $output) use ($app) {
+       $app['etherpad']->setPassword($input->getArgument('padID'),$input->getArgument('newPassword'));
+       $output->writeln("Password updated!");
+    })
+;
+
 return $console;
