@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "bb7bbddba0e2951d7d7e83ef55275abc",
+    "hash": "76a290865a51dfe03ff16b90c0d439a7",
     "packages": [
         {
             "name": "doctrine/common",
@@ -246,16 +246,16 @@
         },
         {
             "name": "neurolit/etherpad-lite-php-client",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/neurolit/etherpad-lite-php-client.git",
-                "reference": "0.1.0"
+                "reference": "0.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/neurolit/etherpad-lite-php-client/zipball/0.1.0",
-                "reference": "0.1.0",
+                "url": "https://api.github.com/repos/neurolit/etherpad-lite-php-client/zipball/0.2.0",
+                "reference": "0.2.0",
                 "shasum": ""
             },
             "require": {
@@ -284,7 +284,7 @@
                 "etherpad-lite",
                 "php"
             ],
-            "time": "2013-04-04 21:23:50"
+            "time": "2013-07-04 08:43:55"
         },
         {
             "name": "pimple/pimple",

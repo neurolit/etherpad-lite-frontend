@@ -89,3 +89,4 @@ Some simple EPL actions can be performed via the console:
 	$ ./console getText padID
 	$ ./console deletePad padID
 	$ ./console getLastEdited padID
+        $ ./console setPassword protectedPadID newPassword
