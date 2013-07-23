@@ -1,6 +1,11 @@
 Changes
 =======
 
+## Dev
+
+* Added RestinaJS in order to have better images for Retina displays
+* New flags icons for French and English languages (including Retina ones) 
+
 ## 1.4.2b
 
 * Minor fix in layout

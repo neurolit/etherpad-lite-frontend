@@ -2,7 +2,7 @@ app_name: Etherpad-Lite
 top_links: |
   <li><a href="http://etherpad.org/">Etherpad-Lite</a></li>
   <li class="divider-vertical"></li>
-  <li><a href="fr"><img alt="Version française" src="img/picto_lang_fr.png"/></a></li>
+  <li><a href="fr"><img alt="Version française" src="img/fr.png"/></a></li>
 pad_creation: pad creation
 app_subtitle: Real-time document collaboration
 description: |
