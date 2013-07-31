@@ -1,9 +1,13 @@
 Changes
 =======
 
-## 1.4.3 
+## 1.4.4 
 
-* Added RestinaJS in order to have better images for Retina displays
+* CSS framework: Bootstrap 2 -> 3 RC1
+
+## 1.4.3
+
+* Added RetinaJS in order to have better images for Retina displays
 * New flags icons for French and English languages (including Retina ones) 
 
 ## 1.4.2b
