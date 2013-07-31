@@ -32,8 +32,10 @@ $app->get('/{lang}',
 $app->post('/createPad',
            function (Silex\Application $app, Request $request) {
              $app['translator']->setLocale($request->get('lang')) ;
+
              $suffix = $request->get('padsuffix') ;
              $password = $request->get('password') ;
+             $lang = $request->get('lang') ;
 
              $text = $app['frontend.pad_initial_text'] ;
 
@@ -49,7 +51,7 @@ $app->post('/createPad',
                                            array(
                                                  'lang' => $lang,
                                                  'error' => $e->getMessage(),
-                                                 'padsuffix' => $padsuffix )
+                                                 'padsuffix' => $suffix )
                                            );
              }
            });
