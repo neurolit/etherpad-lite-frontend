@@ -1,7 +1,7 @@
 Changes
 =======
 
-## DEV
+## 1.4.4 
 
 * CSS framework: Bootstrap 2 -> 3 RC1
 
