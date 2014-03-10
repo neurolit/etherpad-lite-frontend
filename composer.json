@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "silex/silex": "1.0.*@dev",
+        "silex/silex": "~1.0.0",
         "silex/web-profiler": "1.0.*",
         "kriswallsmith/buzz": "v0.8",
         "doctrine/dbal": ">=2.3",
