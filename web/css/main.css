@@ -1,8 +1,21 @@
-body{
-    padding-top: 60px;
-    padding-bottom: 40px;
+@media (min-width: 992px) {
+    body{
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+
+    div#body_container {
+        padding-top: 20px;
+    }
 }
 
-div#body_container {
-        padding-top: 20px;
+@media (max-width: 992px) {
+    body{
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    div#body_container {
+        padding-top: 0px;
+    }
 }
