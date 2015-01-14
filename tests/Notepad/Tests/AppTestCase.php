@@ -11,7 +11,6 @@ class AppTestCase extends \Silex\WebTestCase
     require __DIR__.'/../../../src/controllers.php';
 
     $app['debug'] = true ;
-    unset($app['exception_handler']) ;
 
     // La base de données est à présent une Sqlite en mémoire (non-persistante)
     $app['db.options'] = array(

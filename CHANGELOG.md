@@ -1,6 +1,11 @@
 Changes
 =======
 
+## 1.4.5 
+
+* Upgrade Silex to 1.2
+* Upgrade RetinaJS: version 1.1.0
+
 ## 1.4.4 
 
 * CSS framework: Bootstrap 2 -> 3 RC1
