@@ -3,6 +3,7 @@ Changes
 
 ## Dev
 
+* Upgrade Silex to 1.2
 * Upgrade RetinaJS: version 1.1.0
 
 ## 1.4.4 
