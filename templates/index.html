@@ -29,12 +29,14 @@
 
               <div class="form-group">
                 <label for="password" class="col-md-2 control-label">{% trans %}Mot de passe{% endtrans %}</label>
+                <span class="label label-info hidden-lg hidden-md col-sm-2">{% trans %}Optionnel{% endtrans %}</span>
+                <span class="label label-info hidden-lg hidden-md col-sm-2">{% trans with {'%count%': '8'} %}max{% endtrans%}</span>
                 <div class="col-md-4">
                   <input type="text" class="form-control"
                   name="password" id="password"
                   size="8" maxlength="8" title="{% trans %}ssi mot de passe{% endtrans %}"/>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 hidden-xs hidden-sm">
                     <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
                     <span class="label label-info">{% trans with {'%count%': '8'} %}max{% endtrans%}</span>
                 </div>
@@ -42,6 +44,8 @@
 
               <div class="form-group">
                 <label for="padsuffix" class="col-md-2 control-label">{% trans %}Suffixe{% endtrans %}</label>
+                <span class="label label-info hidden-lg hidden-md">{% trans %}Optionnel{% endtrans %}</span>
+                <span class="label label-info hidden-lg hidden-md">{% trans with {'%count%': '20'} %}max{% endtrans%}</span>
                 <div class="col-md-4">
                   <input type="text" class="form-control"
                          name="padsuffix" id="padsuffix"
@@ -49,7 +53,7 @@
                          and error %}{{ padsuffix }}{% endif %}"
                          title="{% trans %}aide suffixe{% endtrans %}"/>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 hidden-xs hidden-sm">
                     <span class="label label-info">{% trans %}Optionnel{% endtrans %}</span>
                     <span class="label label-info">{% trans with {'%count%': '20'} %}max{% endtrans%}</span>
                 </div>
