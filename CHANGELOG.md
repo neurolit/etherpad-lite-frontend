@@ -1,6 +1,8 @@
 Changes
 =======
 
+* Log HTTP user into log database
+
 ## 1.4.6
 
 * Switched to Bower for vendor libraries
