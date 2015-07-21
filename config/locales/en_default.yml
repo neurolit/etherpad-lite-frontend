@@ -11,7 +11,7 @@ description: |
 Mot de passe: Password
 ssi mot de passe: Only if you want a password-protected Pad
 Optionnel: Optional
-max: max %count% characters
+max: less than %count% characters
 Suffixe: Suffix
 aide suffixe: Added to your Pad URL, in order to retrieve it in your browser history
 Créer un pad: Create a pad

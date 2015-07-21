@@ -1,6 +1,12 @@
 Changes
 =======
 
+## 1.4.6
+
+* Switched to Bower for vendor libraries
+* Better layout for small screens
+* Upgraded Composer dependancies
+ 
 ## 1.4.5 
 
 * Upgrade Silex to 1.2
