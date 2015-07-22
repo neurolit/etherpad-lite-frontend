@@ -41,7 +41,7 @@ Copy `config/app_default.yml` into `config/app.yml` and modify it.
 Here are the statements for creating the MySQL database:
 
 	CREATE DATABASE your_database_name DEFAULT CHARACTER SET 'utf8' DEFAULT COLLATE 'utf8_bin' ;
-	CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15)) ;
+	CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15), creator_inria_login char(8) DEFAULT NULL) ;
 
 ### Modifying the text on the webpages
 

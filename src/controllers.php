@@ -41,8 +41,8 @@ $app->post('/createPad',
 
              try {
                $padId = $app['etherpad']->createPad($suffix,$text,$password) ;
-               $app['db']->executeUpdate('INSERT INTO pad_creation ( pad_id, creator_address ) VALUES ( ?, ? )',
-                                         array($padId, $request->getClientIp())) ;
+               $app['db']->executeUpdate('INSERT INTO pad_creation ( pad_id, creator_address, creator_inria_login ) VALUES ( ?, ?, ? )',
+                                         array($padId, $request->getClientIp(), $request->getUser())) ;
 
                return $app->redirect($app['etherpad.public_url']."/p/$padId") ;
 

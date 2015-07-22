@@ -17,7 +17,7 @@ class AppTestCase extends \Silex\WebTestCase
                                'driver'    => 'pdo_sqlite',
                                'memory'    => true
                                );
-    $app['db']->query('CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15))') ;
+    $app['db']->query('CREATE TABLE pad_creation (pad_id VARCHAR(250) NOT NULL PRIMARY KEY, timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, creator_address VARCHAR(15), creator_inria_login CHAR(8))') ;
 
     return $app;
   }
