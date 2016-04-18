@@ -13,6 +13,7 @@ $app->register(new Neurolit\Silex\Provider\EtherpadServiceProvider());
 
 $app->register(new ServiceControllerServiceProvider());
 $app->register(new UrlGeneratorServiceProvider());
+$app->register(new Silex\Provider\HttpFragmentServiceProvider());
 
 // use Twig
 $app->register(new TwigServiceProvider(), array(
@@ -40,7 +41,7 @@ $app['translator'] = $app->share($app->extend('translator',
     if (file_exists(__DIR__.'/../config/locales/fr.yml')) {
         $translator->addResource('yaml', __DIR__.'/../config/locales/fr.yml', 'fr');
     }
-    
+
     return $translator ;
 }));
 
